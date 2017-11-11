@@ -1,0 +1,5 @@
+br/com/fish/devops/domain/cliente/Cliente.class
+br/com/fish/devops/rest/ClienteRestService.class
+br/com/fish/devops/Application.class
+br/com/fish/devops/ApplicationConfig$JerseyConfig.class
+br/com/fish/devops/ApplicationConfig.class
