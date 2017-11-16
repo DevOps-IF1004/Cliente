@@ -79,19 +79,29 @@ public class ClienteRestService {
 
 		}
 
-		logger.info("foi buscado o cliente " + cli.getNome());
+		if(cli != null) {
+			logger.info("foi buscado o cliente " + cli.getNome());
+			return cli;
+		} else {
+			throw new RuntimeException("Cliente Não Existe!");
+		}
 
-		return cli;
 	}
 
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void addCliente(Cliente cliente) {
 
-		logger.warn("O cliente " + cliente.getId() + " foi inserido!");
+		for(Cliente cli: clientes.values()){
+			if(cliente.getId() == cli.getId()){
+				throw new RuntimeException("Cliente já existe!");
+			}
+		}
 
+		logger.info("O cliente " + cliente.getId() + " foi inserido!");
+		
 		clientes.put(cliente.getId(), cliente);
-
+		
 	}
 
 	@PUT
