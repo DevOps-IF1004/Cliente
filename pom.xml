@@ -53,6 +53,11 @@
 		    <artifactId>logstash-gelf</artifactId>
 		    <version>1.7.0</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+ 			<artifactId>junit</artifactId>
+ 		</dependency>
 
 	</dependencies>
 
