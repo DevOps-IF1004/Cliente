@@ -135,6 +135,20 @@ public class ClienteTest {
 		Assert.assertNotEquals(emailClientBefore, clientTestAfter.getEmail());
 	}
 	
+	@Test
+	public void deleteClienteTeste(){
+		
+		Collection<Cliente> clienteListBefore = clienteRest.getClientes();
+		int lBefore= clienteListBefore.size() -1;
+		
+		clienteRest.deleteCliente(1);
+			
+		Collection<Cliente> clienteListAfter = clienteRest.getClientes();
+		int lAfter= clienteListAfter.size();
+		
+		Assert.assertEquals(lBefore, lAfter);
+	}
+	
 	@After
 	public void cleanTest(){
 		clienteRest = clienteRestBackup;
