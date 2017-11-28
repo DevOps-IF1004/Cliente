@@ -13,7 +13,7 @@
 	</parent>
 	
 	<properties>
-		<docker.image.prefix>tas4</docker.image.prefixo>
+		<docker.image.prefix>tas4</docker.image.prefix>
 	</properties>
 
 	<dependencies>
