@@ -88,6 +88,9 @@
 							<include>${project.build.finalName}.jar</include>
 						</resource>
 					</resource>	
+					<build>
+	                               		<dockerFileDir>.</dockerFileDir>
+	                          	</build>
 					<buildArgs>
 						<JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
 					</buildArgs>
