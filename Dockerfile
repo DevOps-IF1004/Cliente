@@ -1,6 +1,7 @@
 FROM java:8
 EXPOSE 8090
+VOLUME /dados
 USER root
-RUN mkdir /target
-ADD /target/Cliente.jar Cliente.jar
-ENTRYPOINT ["java", "-jar", "Cliente.jar"]
+ARG JAR_FILE
+ADD ${JAR_FILE} cliente.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/cliente.jar"]
